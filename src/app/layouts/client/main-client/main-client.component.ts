@@ -1,4 +1,6 @@
+import { TypeCategory } from './../../../types/Category';
 import { Component, OnInit } from '@angular/core';
+import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
   selector: 'app-main-client',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-client.component.css']
 })
 export class MainClientComponent implements OnInit {
+  categories: TypeCategory[]
 
-  constructor() { }
+  constructor( private categoryService: CategoryService) { 
+    this.categories = []
+  }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
+    this.categoryService.listCategories().subscribe((data)=>{
+      this.categories = data
+    })
   }
 
 }

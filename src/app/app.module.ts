@@ -8,6 +8,9 @@ import { FooterComponent } from './layouts/client/footer/footer.component';
 import { SliderCarouselComponent } from './layouts/client/slider-carousel/slider-carousel.component';
 import { MainClientComponent } from './layouts/client/main-client/main-client.component';
 
+// đây là module cung cấp các phương thức để component sử dụng gọi API
+import { HttpClientModule } from '@angular/common/http'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +21,8 @@ import { MainClientComponent } from './layouts/client/main-client/main-client.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
